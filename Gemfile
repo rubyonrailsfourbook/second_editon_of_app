@@ -32,6 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'bootstrap-sass-rails', '~> 2.3.2.1'
+
 group :devlopment, :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'better_errors', '0.9.0'
