@@ -33,13 +33,13 @@ group :doc do
 end
 
 group :devlopment, :test do
-  gem 'rspec-rails', '~> 2.14.0'
+  gem 'rspec-rails', '~> 2.14.1'
   gem 'better_errors', '0.9.0'
   gem 'binding_of_caller', '0.7.2'
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
