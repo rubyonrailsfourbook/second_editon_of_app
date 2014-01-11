@@ -77,4 +77,13 @@ Rails4Blog::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.generators do |g|
+    g.test_framework :rspec,
+      routing_specs: false,
+      controller_specs: true, 
+      request_specs: true,
+      helper_specs: false,
+      view_spoecs: false
+  end
 end
