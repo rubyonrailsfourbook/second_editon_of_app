@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  attr_accessor :tag_list
+  
   belongs_to :user
 
 	has_many :taggings
@@ -7,11 +9,7 @@ class Article < ActiveRecord::Base
   validates_presence_of :name, :content
   
   def self.tagged_with(name)
-  	Tag.find_by(name: name).articles
-  end
-
-  def self.tag_counts
-  	Tag.select("tags.*, count(taggings(taggings.id) as count").joins(:taggings).group("taggings.tag_id")
+  	Tag.find_by_name(name).articles
   end
 
   def tag_list
@@ -19,8 +17,8 @@ class Article < ActiveRecord::Base
   end
 
   def tag_list=(names)
-  	self.tags = names.split(",").map do |n|
-  		Tag.where(name: n.strip).first_or_create!
-  	end
+    self.tags = names.split(",").map do |n|
+      Tag.where(name: n.strip).first_or_create!
+    end
   end
 end
