@@ -27,7 +27,7 @@ describe User do
 	describe "should require a password" do
 		before do 
 			@user.password = " " 
-			@user.password_confirmation  = " " 
+			@user.password_confirmation  = " "
 		end
 		it { should_not be_valid }
 	end
